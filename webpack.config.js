@@ -2,35 +2,34 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-let devFlagPlugin = new webpack.DefinePlugin({
+var devFlagPlugin = new webpack.DefinePlugin({
 	__DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 });
 
 module.exports = {
 	devtool: 'inline-sourcemap',
 	entry: [
-		'./app/src/js/index'
+		'webpack-dev-server/client?http://0.0.0.0:3000',
+		'webpack/hot/only-dev-server',
+		'./src/js/index'
 	],
 	output: {
 		path: path.join(__dirname, 'build'),
-		publicPath: '/',
+		publicPath: '/static/',
 		filename: 'bundle.js'
 	},
-	devServer: {
-		historyApiFallback: true,
-		hot: true,
-		inline: true,
-		progress: true
-	},
 	plugins: [
-		new webpack.optimize.OccurenceOrderPlugin(),
-		new webpack.NoErrorsPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		devFlagPlugin
 	],
 	module: {
 		loaders: [
-			{ test: /\.js$/, loaders: ['babel'], exclude: /node_modules/ }
+			{
+				test: /\.js$/,
+				loaders: ['react-hot', 'babel'],
+				exclude: /node_modules/,
+				include: path.join(__dirname, 'src')
+			}
 		]
 	}
 };
