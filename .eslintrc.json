@@ -1,30 +1,27 @@
 {
-  parserOptions: {
-    ecmaVersion: 6,
-    sourceType: "module",
-    globals: {
-      React: true
-    },
-    ecmaFeatures: {
-      jsx: true,
-      spread: true,
-      modules: true
-    },
-    plugins: [
-      "react",
-      "babel"
-    ]
+  "parserOptions": {
+  "ecmaVersion": 6,
+      "sourceType": "module",
+      "globals": {
+    "React": true
   },
-  parser: "babel-eslint",
-  rules: {
-    strict: 0,
-    semi: 2
+  "ecmaFeatures": {
+    "jsx": true,
+        "spread": true,
+        "modules": true
   },
-  eslintConfig: {
-    env: {
-      es6: true,
-      node: true,
-      browser: true
-    }
+  "plugins": ["react", "babel"]
+},
+  "parser": "babel-eslint",
+    "rules": {
+  "strict": 0,
+      "semi": 2
+},
+  "eslintConfig": {
+  "env": {
+    "es6": true,
+        "node": true,
+        "browser": true
   }
+}
 }

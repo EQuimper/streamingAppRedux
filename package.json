@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd server && nodemon server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "redux",
