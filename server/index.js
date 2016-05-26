@@ -13,6 +13,7 @@ app.get('/api/streams/search/', (req, res) => {
 });
 
 const PORT = process.env.PORT || 3001;
+
 app.listen(PORT, () => {
 	console.log(`Server listen to port ${PORT}`);
 });

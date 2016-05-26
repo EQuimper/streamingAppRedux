@@ -12,15 +12,13 @@ const enhancers = compose(
 	window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 
-const initialState = {
-
-};
+const initialState = {};
 
 const store = createStore(
 	rootReducer,
 	initialState,
 	enhancers
-);
+); // reducer, initialState, compose
 
 export const history = syncHistoryWithStore(browserHistory, store);
 

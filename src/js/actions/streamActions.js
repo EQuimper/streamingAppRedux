@@ -1,7 +1,6 @@
 import request from 'superagent';
 import * as types from '../constants/';
 
-
 export const reqStreams = (games) => {
 	const promise = new Promise((resolve, reject) => {
 		request
@@ -16,7 +15,7 @@ export const reqStreams = (games) => {
 		return {
 			type: types.REQ_STREAMS,
 			games
-		}
+		};
 	});
 };
 
@@ -25,5 +24,5 @@ export const receiveStreams = (streams, game) => {
 		type: types.RECEIVE_STREAMS,
 		streams,
 		game
-	}
+	};
 };
