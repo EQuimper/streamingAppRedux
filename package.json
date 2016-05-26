@@ -22,11 +22,17 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "express": "^4.13.4",
+    "normalizr": "^2.1.0",
     "path": "^0.12.7",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
+    "react-router": "^2.4.1",
+    "react-router-redux": "^4.0.4",
     "redux": "^3.5.2",
+    "redux-promise-middleware": "^3.0.0",
+    "request": "^2.72.0",
+    "superagent": "^2.0.0-alpha.3",
     "webpack": "^1.13.1"
   },
   "devDependencies": {

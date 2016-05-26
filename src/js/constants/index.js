@@ -1,0 +1,2 @@
+export const REQ_STREAMS = 'REQ_STREAMS';
+export const RECEIVE_STREAMS = 'RECEIVE_STREAMS';
