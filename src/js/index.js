@@ -9,7 +9,7 @@ const ROOT = (
 	<Provider store={store}>
 		{routes}
 	</Provider>
-)
+);
 
 render (
 	ROOT,
