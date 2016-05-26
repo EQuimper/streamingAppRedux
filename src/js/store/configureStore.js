@@ -1,10 +1,14 @@
 import { syncHistoryWithStore } from 'react-router-redux';
 import { browserHistory } from 'react-router';
 import { applyMiddleware, compose, createStore } from 'redux';
+import promiseMiddleware from 'redux-promise-middleware';
 
 import rootReducer from '../reducers';
 
+const middleware = applyMiddleware(promiseMiddleware);
+
 const enhancers = compose(
+	middleware,
 	window.devToolsExtension ? window.devToolsExtension() : f => f
 );
 
