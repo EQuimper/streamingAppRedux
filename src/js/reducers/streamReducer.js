@@ -1,11 +1,6 @@
 import * as types from '../constants/';
-
-// const initialStream = {
-// 	isFetching: false,
-// 	items: []
-// };
-
-const streamReducer = (streams = { loaded: false }, action) => {
+/*>>>>>>=============================================<<<<<<*/
+const streamReducer = (streams = { isFetched: false }, action) => {
 	switch (action.type) {
 		case `${types.RECEIVE_STREAMS}_PENDING`:
 			return {};
@@ -13,17 +8,17 @@ const streamReducer = (streams = { loaded: false }, action) => {
 			return {
 				streams: action.payload,
 				err: null,
-				loaded: true
+				isFetched: true
 			};
 		case `${types.RECEIVE_STREAMS}_REJECTED`:
 			return {
 				streams: null,
 				err: action.payload,
-				loaded: true
+				isFetched: true
 			};
 		default:
 			return streams;
 	}
 };
-
+/*>>>>>>=============================================<<<<<<*/
 export default streamReducer;

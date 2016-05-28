@@ -33,6 +33,7 @@
     "react-router-redux": "^4.0.4",
     "react-tap-event-plugin": "^1.0.0",
     "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^3.0.0",
     "request": "^2.72.0",
     "superagent": "^2.0.0-alpha.3",
