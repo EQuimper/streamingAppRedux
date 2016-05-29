@@ -6,7 +6,7 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 /*>>>>>>=============================================<<<<<<*/
 import NavBar from '../components/layout/NavBar';
 /*>>>>>>=============================================<<<<<<*/
-injectTapEventPlugin();
+injectTapEventPlugin(); // Need it cause of material for mobile
 // Make the fonts Roboto cause of Material
 const Fonts = ({ children }) => (
 	<Block
