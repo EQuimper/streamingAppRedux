@@ -25,7 +25,7 @@ const store = createStore(
 	enhancers
 );
 
-store.dispatch(reqStreams());
+// store.dispatch(reqStreams());
 
 // Make the history work with browserHistory
 export const history = syncHistoryWithStore(browserHistory, store);
