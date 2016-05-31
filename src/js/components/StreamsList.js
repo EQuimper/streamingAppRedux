@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import { GridList } from 'material-ui/GridList'; // http://www.material-ui.com/#/components/grid-list
 /*>>>>>>=============================================<<<<<<*/
 import StreamsListSingle from './StreamsListSingle';
@@ -13,7 +14,11 @@ const StreamsList = ({ streams }) => {
 				cellHeigth={200}
 				cols={4}
 				style={styles.gridList}>
-				{streams.map((stream) => <StreamsListSingle key={stream._id} {...stream} />)}
+				{streams.map((stream) => (
+					<Link to={`/streams/${stream._id}`} key={`${stream._id}_Link`}>
+						<StreamsListSingle key={stream._id} {...stream} />
+					</Link>
+				))}
 			</GridList>
 		);
 	}
