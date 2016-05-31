@@ -7,7 +7,7 @@ export default () => (
         title="TITLE HERE"
         zDepth={2}
         iconElementRight={
-            <Link to="games">Games</Link>
+            <Link to="streams">Streams</Link>
         }
         />
 );

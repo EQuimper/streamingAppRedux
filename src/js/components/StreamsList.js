@@ -31,7 +31,7 @@ const StreamsList = ({ streams }) => {
                     <Link
                         to={`/streams/${stream.channel.name}`}
                         key={`${stream._id}_Link`}
-                        params={stream.channel.name}>
+                        params={{name: stream.channel.name}}>
                         <StreamsListSingle key={stream._id} {...stream} />
                     </Link>
                 ))}

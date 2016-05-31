@@ -13,8 +13,8 @@ const styles = {
 };
 
 const StreamsListSingle = (props) => {
-    const { preview, _id, game, channel, viewers } = props;
-    const { name, views } = channel;
+    const { preview, game, channel, viewers } = props;
+    const { name } = channel;
     return (
         <GridTile
             titleBackground="linear-gradient(
