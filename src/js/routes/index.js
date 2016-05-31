@@ -21,19 +21,19 @@ import StreamSingle from '../components/StreamSingle.js';
 const boundRouteActions = bindActionCreators(routeActions, store.dispatch);
 
 export default (
-	<Router history={history}>
-		<Route path="/" component={App}>
-			<IndexRoute component={Home} />
-			<Route path="streams">
-				<IndexRoute component={StreamsApp}
-				            onEnter={boundRouteActions.boundAllStreams}/>
-				<Route
-					path={":name"}
-					onEnter={boundRouteActions.boundOneStream}
-					component={StreamSingle}/>
-			</Route>
-			<Route path="games" component={Games}/>
-			<Route path="*" component={NoMatch}/>
-		</Route>
-	</Router>
+    <Router history={history}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Home} />
+            <Route path="streams">
+                <IndexRoute component={StreamsApp}
+                    onEnter={boundRouteActions.boundAllStreams}/>
+                <Route
+                    path={":name"}
+                    onEnter={boundRouteActions.boundOneStream}
+                    component={StreamSingle}/>
+            </Route>
+            <Route path="games" component={Games}/>
+            <Route path="*" component={NoMatch}/>
+        </Route>
+    </Router>
 );

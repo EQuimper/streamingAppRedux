@@ -7,37 +7,37 @@ import StreamsListSingle from './StreamsListSingle';
 /*>>>>>>=============================================<<<<<<*/
 
 const styles = {
-	root: {
-		display: 'flex',
-		flexWrap: 'wrap',
-		justifyContent: 'space-around'
-	},
-	gridList: {
-		width: 'max',
-		height: 'auto',
-		marginBottom: 25
-	}
+    root: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-around'
+    },
+    gridList: {
+        width: 'max',
+        height: 'auto',
+        marginBottom: 25
+    }
 };
 
 const StreamsList = ({ streams }) => {
-	return (
-		<div style={styles.root}>
-			<h1>{streams[ 0 ].game}</h1>
-			<GridList
-				cellHeigth={250}
-				cols={4}
-				style={styles.gridList}>
-				{streams.map((stream) => (
-					<Link
-						to={`/streams/${stream.channel.name}`}
-						key={`${stream._id}_Link`}
-						params={stream.channel.name}>
-						<StreamsListSingle key={stream._id} {...stream} />
-					</Link>
-				))}
-			</GridList>
-		</div>
-	);
+    return (
+        <div style={styles.root}>
+            <h1>{streams[ 0 ].game}</h1>
+            <GridList
+                cellHeigth={250}
+                cols={4}
+                style={styles.gridList}>
+                {streams.map((stream) => (
+                    <Link
+                        to={`/streams/${stream.channel.name}`}
+                        key={`${stream._id}_Link`}
+                        params={stream.channel.name}>
+                        <StreamsListSingle key={stream._id} {...stream} />
+                    </Link>
+                ))}
+            </GridList>
+        </div>
+    );
 };
 
 export default StreamsList;

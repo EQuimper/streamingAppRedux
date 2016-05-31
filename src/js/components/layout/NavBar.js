@@ -3,11 +3,11 @@ import { Link } from 'react-router';
 import AppBar from 'material-ui/AppBar';
 /*>>>>>>=============================================<<<<<<*/
 export default () => (
-	<AppBar
-		title="TITLE HERE"
-		zDepth={2}
-		iconElementRight={
-			<Link to="games">Games</Link>
-		}
-	/>
+    <AppBar
+        title="TITLE HERE"
+        zDepth={2}
+        iconElementRight={
+            <Link to="games">Games</Link>
+        }
+        />
 );

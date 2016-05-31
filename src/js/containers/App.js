@@ -11,22 +11,22 @@ import NavBar from '../components/layout/NavBar';
 injectTapEventPlugin(); // Need it cause of material for mobile
 // Make the fonts Roboto cause of Material
 const Fonts = ({ children }) => (
-	<Block
-		fontFamily='Roboto, sans-serif'>
-		{ children }
-	</Block>
+    <Block
+        fontFamily='Roboto, sans-serif'>
+        { children }
+    </Block>
 );
 
 // The Main App
 export default class App extends Component {
-	render() {
-		return (
-			<MuiThemeProvider muiTheme={getMuiTheme()}>
-				<Fonts>
-					<NavBar />
-					{this.props.children}
-				</Fonts>
-			</MuiThemeProvider>
-		);
-	}
+    render() {
+        return (
+            <MuiThemeProvider muiTheme={getMuiTheme()}>
+                <Fonts>
+                    <NavBar />
+                    {this.props.children}
+                </Fonts>
+            </MuiThemeProvider>
+        );
+    }
 }
