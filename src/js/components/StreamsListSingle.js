@@ -4,6 +4,14 @@ import { GridTile } from 'material-ui/GridList'; // http://www.material-ui.com/#
 import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
 /*>>>>>>=============================================<<<<<<*/
 
+const styles = {
+	views: {
+		color: 'white',
+		paddingRight: '25px',
+		paddingLeft: '5px'
+	}
+};
+
 const StreamsListSingle = (props) => {
 	const { preview, _id, game, channel } = props;
 	const { name, views } = channel;
@@ -24,11 +32,3 @@ const StreamsListSingle = (props) => {
 };
 
 export default Radium(StreamsListSingle);
-
-const styles = {
-	views: {
-		color: 'white',
-		paddingRight: '25px',
-		paddingLeft: '5px'
-	}
-};

@@ -1,22 +1,34 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CircularProgress from 'material-ui/CircularProgress';
+import LinearProgress from 'material-ui/LinearProgress';
 /*>>>>>>=============================================<<<<<<*/
 
 import StreamsList from '../components/StreamsList';
 /*>>>>>>=============================================<<<<<<*/
 
-const StreamsApp = React.createClass ({
-	render() {
+const styles = {
+	circle: {
+		left: '45%',
+		top: '250px'
+	}
+};
+
+const StreamsApp = ({ streams, err, isFetched }) => {
+	if (!isFetched) {
+		return <CircularProgress style={styles.circle} size={2}/>;
+	} else if (err === null) {
 		return (
 			<div>
-				Streaming
-				<StreamsList {...this.props.stream} />
+				<StreamsList streams={streams}/>
 			</div>
 		);
+	} else {
+		return <h1>Cannot find it !!!</h1>;
 	}
-});
+};
 
-const mapStateToProps = (state) => ({ stream: state.stream });
+const mapStateToProps = (state) => state.streams;
 
 /*>>>>>>=============================================<<<<<<*/
 
