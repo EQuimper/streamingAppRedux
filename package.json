@@ -27,6 +27,7 @@
     "material-ui": "^0.15.0",
     "normalizr": "^2.1.0",
     "path": "^0.12.7",
+    "radium": "^0.17.1",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 /*>>>>>>=============================================<<<<<<*/
+
 import StreamsList from '../components/StreamsList';
 /*>>>>>>=============================================<<<<<<*/
 
@@ -16,5 +17,7 @@ const StreamsApp = React.createClass ({
 });
 
 const mapStateToProps = (state) => ({ stream: state.stream });
+
 /*>>>>>>=============================================<<<<<<*/
+
 export default connect(mapStateToProps)(StreamsApp);

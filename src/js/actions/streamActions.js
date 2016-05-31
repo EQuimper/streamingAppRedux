@@ -1,7 +1,9 @@
 import request from 'superagent';
 /*>>>>>>=============================================<<<<<<*/
+
 import * as types from '../constants/';
 /*>>>>>>=============================================<<<<<<*/
+
 export const reqStreams = (games) => {
 	const promise = new Promise((resolve, reject) => {
 		request

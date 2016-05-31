@@ -1,24 +1,19 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+/*>>>>>>=============================================<<<<<<*/
+import StreamsListSingle from './StreamsListSingle';
 /*>>>>>>=============================================<<<<<<*/
 
-const StreamsList = ({streams}) => {
+const StreamsList = ({ streams }) => {
 	console.log(streams);
+	let streamArray = [];
+	if (streams) {
+		streamArray = streams.map((stream) => <StreamsListSingle key={ stream._id } { ...stream } />);
+	}
 	return (
 		<div>
-			{JSON.stringify(streams)}
-			{streams.map((stream) => {
-				return (
-					<div>
-						<h1>{stream.game}</h1>
-					</div>
-				);
-			})}
+			{ streamArray }
 		</div>
 	);
-};
-
-StreamsList.proptypes = {
-	streams: React.PropTypes.array
 };
 
 export default StreamsList;
