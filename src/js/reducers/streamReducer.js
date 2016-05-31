@@ -1,5 +1,6 @@
 import * as types from '../constants/';
 /*>>>>>>=============================================<<<<<<*/
+
 const streamReducer = (streams = { isFetched: false }, action) => {
 	switch (action.type) {
 		case `${types.RECEIVE_STREAMS}_PENDING`:

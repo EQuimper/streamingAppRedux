@@ -27,7 +27,10 @@ export default (
 			<Route path="streams">
 				<IndexRoute component={StreamsApp}
 				            onEnter={boundRouteActions.boundAllStreams}/>
-				<Route path={":id"} component={StreamSingle}/>
+				<Route
+					path={":name"}
+					onEnter={boundRouteActions.boundOneStream}
+					component={StreamSingle}/>
 			</Route>
 			<Route path="games" component={Games}/>
 			<Route path="*" component={NoMatch}/>

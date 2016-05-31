@@ -2,34 +2,9 @@ import React from 'react';
 import { Link } from 'react-router';
 import { GridList } from 'material-ui/GridList'; // http://www.material-ui.com/#/components/grid-list
 /*>>>>>>=============================================<<<<<<*/
+
 import StreamsListSingle from './StreamsListSingle';
 /*>>>>>>=============================================<<<<<<*/
-
-const StreamsList = ({ streams }) => {
-	console.log(streams);
-	let streamArray = [];
-	if (streams) {
-		return (
-			<GridList
-				cellHeigth={200}
-				cols={4}
-				style={styles.gridList}>
-				{streams.map((stream) => (
-					<Link to={`/streams/${stream._id}`} key={`${stream._id}_Link`}>
-						<StreamsListSingle key={stream._id} {...stream} />
-					</Link>
-				))}
-			</GridList>
-		);
-	}
-	return (
-		<div style={styles.root}>
-			{ streamArray }
-		</div>
-	);
-};
-
-export default StreamsList;
 
 const styles = {
 	root: {
@@ -40,6 +15,29 @@ const styles = {
 	gridList: {
 		width: 'max',
 		height: 'auto',
-		marginBottom: 24
+		marginBottom: 25
 	}
 };
+
+const StreamsList = ({ streams }) => {
+	return (
+		<div style={styles.root}>
+			<h1>{streams[ 0 ].game}</h1>
+			<GridList
+				cellHeigth={250}
+				cols={4}
+				style={styles.gridList}>
+				{streams.map((stream) => (
+					<Link
+						to={`/streams/${stream.channel.name}`}
+						key={`${stream._id}_Link`}
+						params={stream.channel.name}>
+						<StreamsListSingle key={stream._id} {...stream} />
+					</Link>
+				))}
+			</GridList>
+		</div>
+	);
+};
+
+export default StreamsList;
