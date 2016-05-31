@@ -15,10 +15,10 @@ const StreamsListSingle = (props) => {
 			actionIcon={
 				<div>
 					<RemoveRedEye color="white"/>
-					<span style={styles.views}>{ views }</span>
+					<span style={styles.views}>{views}</span>
 				</div>
 			}>
-			<img src={preview.medium} alt={ name }/>
+			<img src={preview.medium} alt={name}/>
 		</GridTile>
 	);
 };
