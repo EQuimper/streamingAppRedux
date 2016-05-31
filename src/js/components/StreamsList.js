@@ -1,5 +1,5 @@
 import React from 'react';
-import { GridList } from 'material-ui/GridList';
+import { GridList } from 'material-ui/GridList'; // http://www.material-ui.com/#/components/grid-list
 /*>>>>>>=============================================<<<<<<*/
 import StreamsListSingle from './StreamsListSingle';
 /*>>>>>>=============================================<<<<<<*/

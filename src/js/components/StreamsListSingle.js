@@ -1,6 +1,6 @@
 import React from 'react';
 import Radium from 'radium';
-import { GridTile } from 'material-ui/GridList';
+import { GridTile } from 'material-ui/GridList'; // http://www.material-ui.com/#/components/grid-list
 import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
 /*>>>>>>=============================================<<<<<<*/
 
