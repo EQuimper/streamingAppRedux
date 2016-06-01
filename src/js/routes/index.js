@@ -16,6 +16,7 @@ import Home from '../components/layout/Home';
 import Games from '../components/layout/Games';
 import NoMatch from '../components/layout/NoMatch';
 import StreamSingle from '../components/StreamSingle.js';
+import ChannelVideos from '../components/ChannelVideos';
 /*>>>>>>=============================================<<<<<<*/
 
 const boundRouteActions = bindActionCreators(routeActions, store.dispatch);
@@ -28,9 +29,15 @@ export default (
                 <IndexRoute component={StreamsApp}
                     onEnter={boundRouteActions.boundAllStreams}/>
                 <Route
-                    path={":name"}
-                    onEnter={boundRouteActions.boundOneStream}
-                    component={StreamSingle}/>
+                    path={"channel/:name"}>
+                    <IndexRoute
+                        onEnter={boundRouteActions.boundOneStream}
+                        component={StreamSingle} />
+                    <Route
+                        path={"videos"}
+                        component={ChannelVideos}
+                        onEnter={boundRouteActions.boundAllVideosFromChannel} />
+                </Route>
             </Route>
             <Route path="games" component={Games}/>
             <Route path="*" component={NoMatch}/>
