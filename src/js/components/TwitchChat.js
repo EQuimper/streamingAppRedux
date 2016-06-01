@@ -49,7 +49,6 @@ class TwitchChat extends React.Component {
         );
     }
 }
-;
 
 export default TwitchChat;
 
