@@ -8,17 +8,15 @@ const styles = {
     }
 };
 
-const ChatIframe = ({ name }) => {
-    return (
-        <iframe
-            src={`https://www.twitch.tv/${name}/chat?popout=`}
-            frameborder="0"
-            scrolling="no"
-            height="500"
-            width="350">
-        </iframe>
-    );
-};
+const ChatIframe = ({ name }) => (
+    <iframe
+        src={`https://www.twitch.tv/${name}/chat?popout=`}
+        frameborder="0"
+        scrolling="no"
+        height="500"
+        width="350">
+    </iframe>
+);
 
 class TwitchChat extends React.Component {
     constructor() {
@@ -51,5 +49,3 @@ class TwitchChat extends React.Component {
 }
 
 export default TwitchChat;
-
-

@@ -7,13 +7,13 @@ import store from './store/configureStore';
 import routes from './routes';
 /*>>>>>>=============================================<<<<<<*/
 
-const ROOT = (
+const Root = () => (
     <Provider store={store}>
         {routes}
     </Provider>
 );
 // Render the APP
 render (
-    ROOT,
+    <Root />,
     document.getElementById('app')
 );
