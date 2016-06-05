@@ -3,18 +3,25 @@ import Toggle from 'material-ui/Toggle';
 /*>>>>>>=============================================<<<<<<*/
 
 const styles = {
+    base: {
+        marginTop: '15px'
+    },
     toggle: {
         marginBottom: 16
+    },
+    chat: {
+        boxShadow: '2px 2px 2px'
     }
 };
 
 const ChatIframe = ({ name }) => (
     <iframe
+        style={styles.chat}
         src={`https://www.twitch.tv/${name}/chat?popout=`}
         frameborder="0"
         scrolling="no"
-        height="500"
-        width="350">
+        height="400"
+        width="620">
     </iframe>
 );
 
@@ -34,7 +41,7 @@ class TwitchChat extends React.Component {
     render() {
         const { name } = this.props;
         return (
-            <div>
+            <div style={styles.base}>
                 <Toggle
                     label="Chat"
                     labelPosition="right"
@@ -42,7 +49,7 @@ class TwitchChat extends React.Component {
                     onClick={this.showChat}
                     style={styles.toggle}
                 />
-                { this.state.showChat ? <ChatIframe name={name} /> : <h1>Why no chat ?</h1> }
+                { this.state.showChat ? <ChatIframe name={name} /> : null }
             </div>
         );
     }
