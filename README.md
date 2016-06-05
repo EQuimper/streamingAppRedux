@@ -4,4 +4,4 @@
 - Material-Ui
 - Webpack
 
-##### We accept contribution
+##### I accept contribution
