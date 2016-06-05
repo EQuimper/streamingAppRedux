@@ -15,7 +15,7 @@ import StreamsApp from '../containers/StreamsApp';
 import Home from '../components/layout/Home';
 import Games from '../components/layout/Games';
 import NoMatch from '../components/layout/NoMatch';
-import StreamSingle from '../components/StreamSingle.js';
+import StreamSingle from '../containers/StreamSingle.js';
 import ChannelVideos from '../components/ChannelVideos';
 /*>>>>>>=============================================<<<<<<*/
 

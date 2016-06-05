@@ -9,8 +9,9 @@ import Video from 'material-ui/svg-icons/av/video-library';
 import Avatar from 'material-ui/Avatar';
 /*>>>>>>=============================================<<<<<<*/
 
-import TwitchChat from './TwitchChat.js';
-import IframeVideo from './IframeVideo';
+import TwitchChat from '../components/Stream/TwitchChat';
+import StreamCard from '../components/Stream/StreamCard';
+import IframeVideo from '../components/IframeVideo';
 /*>>>>>>=============================================<<<<<<*/
 
 const styles = {
@@ -48,6 +49,7 @@ const StreamSingle = ({ stream, err, isFetched }) => {
         const { status, display_name, name, game, logo, followers, views, videos } = stream;
         return (
             <div>
+                <StreamCard stream={stream} />
                 <h3>{status}</h3>
                 {mature}
                 <br/>
@@ -78,9 +80,5 @@ const StreamSingle = ({ stream, err, isFetched }) => {
 };
 
 const mapStateToProps = (state) => state.stream;
-
-//StreamSingle.propTypes = {
-//    stream: PropTypes.array.isRequired
-//};
 
 export default connect(mapStateToProps)(StreamSingle);
