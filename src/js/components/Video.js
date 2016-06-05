@@ -3,6 +3,9 @@ import { Card, CardActions, CardHeader, CardMedia, CardTitle, CardText } from 'm
 import FlatButton from 'material-ui/FlatButton';
 /*>>>>>>=============================================<<<<<<*/
 
+import IframeChannelVideo from './IframeChannelVideo';
+/*>>>>>>=============================================<<<<<<*/
+
 export default class Video extends Component {
     constructor() {
         super();
@@ -16,24 +19,24 @@ export default class Video extends Component {
     };
 
     render() {
-        const { title, game, preview } = this.props;
+        const { title, game, preview, description, channel } = this.props;
         return (
             <Card expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
                 <CardHeader
                     title={title}
-                    subtitle={`Game: ${game}`}
+                    subtitle={game === null || game === '' ? 'Game not choose!' : `Game: ${game}`}
                     avatar={preview}
                     actAsExpander={true}
                     showExpandableButton={true}
                 />
                 <CardText>
-
+                    {description}
                 </CardText>
                 <CardMedia
                     expandable={true}
                     overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
                 >
-                    <img src="http://lorempixel.com/600/337/nature/" />
+                    <IframeChannelVideo name={channel.name} />
                 </CardMedia>
                 <CardTitle title="Card title" subtitle="Card subtitle" expandable={true} />
                 <CardText expandable={true}>
