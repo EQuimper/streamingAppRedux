@@ -49,29 +49,15 @@ const StreamSingle = ({ stream, err, isFetched }) => {
         const { status, display_name, name, game, logo, followers, views, videos } = stream;
         return (
             <div>
-                <StreamCard stream={stream} />
-                <h3>{status}</h3>
-                {mature}
-                <br/>
-                <div>
-                    <h5>Want to see more video from {display_name}</h5>
-                    <Link to={`/streams/channel/${name}/videos`} params={{name}}>
-                        <IconButton style={styles.iconVideo}>
-                            <Video style={styles.video} />
-                        </IconButton>
-                    </Link>
-                </div>
-                <br />
                 <Avatar
                     src={logo}
                     size={60}
                 />
-                <p><span style={styles.name}><em>{display_name}</em></span> playing <b>{game}</b></p>
+                <h2>{status}</h2>
+                <StreamCard stream={stream} />
                 <br/>
                 <IframeVideo name={name} />
                 <TwitchChat name={name} />
-                <Favorite color="red" /> <b>{followers}</b>
-                <Face /> <b>{views}</b>
             </div>
         );
     } else {
