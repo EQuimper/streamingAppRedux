@@ -10,7 +10,7 @@ const styles = {
         marginBottom: 16
     },
     chat: {
-        boxShadow: '2px 2px 2px'
+        boxShadow: 'rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px'
     }
 };
 
