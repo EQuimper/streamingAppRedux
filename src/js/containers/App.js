@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import { Block } from 'jsxstyle'; // https://github.com/petehunt/jsxstyle
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -30,3 +30,8 @@ export default class App extends Component {
         );
     }
 }
+
+// Only a single child can be passed to a component as children.
+App.propTypes = {
+    children: PropTypes.element.isRequired
+};

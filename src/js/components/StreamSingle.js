@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import CircularProgress from 'material-ui/CircularProgress';
@@ -84,5 +84,9 @@ const StreamSingle = ({ stream, err, isFetched }) => {
 };
 
 const mapStateToProps = (state) => state.stream;
+
+//StreamSingle.propTypes = {
+//    stream: PropTypes.array.isRequired
+//};
 
 export default connect(mapStateToProps)(StreamSingle);

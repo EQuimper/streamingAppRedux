@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Radium from 'radium';
 import { GridTile } from 'material-ui/GridList'; // http://www.material-ui.com/#/components/grid-list
 import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
@@ -32,5 +32,10 @@ const StreamsListSingle = (props) => {
         </GridTile>
     );
 };
+
+//StreamsListSingle.propTypes = {
+//    const { streams } = this.props,
+//    streams: PropTypes.array.isRequired
+//};
 
 export default Radium(StreamsListSingle);
