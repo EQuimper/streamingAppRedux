@@ -13,7 +13,7 @@ import StreamsApp from '../containers/StreamsApp';
 /*>>>>>>=============================================<<<<<<*/
 
 import Home from '../components/layout/Home';
-import Games from '../components/layout/Games';
+import Games from '../containers/Games';
 import NoMatch from '../components/layout/NoMatch';
 import StreamSingle from '../containers/StreamSingle.js';
 import ChannelVideos from '../components/ChannelVideos';
