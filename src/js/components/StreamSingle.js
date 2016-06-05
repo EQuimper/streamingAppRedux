@@ -10,6 +10,7 @@ import Avatar from 'material-ui/Avatar';
 /*>>>>>>=============================================<<<<<<*/
 
 import TwitchChat from './TwitchChat.js';
+import IframeVideo from './IframeVideo';
 /*>>>>>>=============================================<<<<<<*/
 
 const styles = {
@@ -65,14 +66,7 @@ const StreamSingle = ({ stream, err, isFetched }) => {
                 />
                 <p><span style={styles.name}><em>{display_name}</em></span> playing <b>{game}</b></p>
                 <br/>
-                <iframe
-                    src={`https://player.twitch.tv/?channel=${name}`}
-                    frameborder="0"
-                    scrolling="no"
-                    height="378"
-                    width="620"
-                    allowFullScreen>
-                </iframe>
+                <IframeVideo name={name} />
                 <TwitchChat name={name} />
                 <Favorite color="red" /> <b>{followers}</b>
                 <Face /> <b>{views}</b>
