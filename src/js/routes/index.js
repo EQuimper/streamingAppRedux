@@ -25,7 +25,7 @@ export default (
     <Router history={history}>
         <Route path="/" component={App}>
             <IndexRoute component={Home} />
-            <Route path="streams">
+            <Route path="streams/:game">
                 <IndexRoute
                     component={StreamsApp}
                     onEnter={boundRouteActions.boundAllStreams} />
@@ -39,7 +39,7 @@ export default (
                         onEnter={boundRouteActions.boundAllVideosFromChannel} />
                 </Route>
             </Route>
-            <Route path="games" component={Games} />
+            <Route path="games" component={Games} onEnter={boundRouteActions.boundAllGames} />
             <Route path="*" component={NoMatch} />
         </Route>
     </Router>

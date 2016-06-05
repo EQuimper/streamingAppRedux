@@ -6,3 +6,6 @@ export const REQ_ONE_STREAM = 'REQ_ONE_STREAM';
 export const RECEIVE_STREAM = 'RECEIVE_STREAM';
 // Channel videos
 export const RECEIVE_VIDEOS_FROM_CHANNEL = 'RECEIVE_VIDEOS_FROM_CHANNEL';
+// Games
+export const RECEIVE_ONE_GAME = 'RECEIVE_ONE_Game';
+export const RECEIVE_ALL_GAMES = 'RECEIVE_ALL_GAMES';
