@@ -22,6 +22,9 @@ const styles = {
     },
     list: {
         textAlign: 'center'
+    },
+    link: {
+        textDecoration: 'none'
     }
 };
 
@@ -74,7 +77,7 @@ const StreamCard = ({ stream }) => {
                                 </div>
                         } /> : null }
                     <Divider />
-                    <Link to={`/streams/channel/${name}/videos`} params={{name}}>
+                    <Link style={styles.link} to={`/streams/channel/${name}/videos`} params={{name}}>
                         <ListItem
                             primaryText={
                                 <Video />
