@@ -9,6 +9,7 @@ import MenuItem from 'material-ui/MenuItem';
 import Favorite from 'material-ui/svg-icons/action/favorite';
 import Build from 'material-ui/svg-icons/action/build';
 import Game from 'material-ui/svg-icons/hardware/gamepad';
+import MyGame from 'material-ui/svg-icons/hardware/videogame-asset';
 import Divider from 'material-ui/Divider';
 import Channel from 'material-ui/svg-icons/av/videocam';
 import Video from 'material-ui/svg-icons/av/video-library';
@@ -69,8 +70,9 @@ export default class NavBar extends Component {
                     </MenuItem>
                     <MenuItem leftIcon={<Account />} primaryText="My Account" />
                     <MenuItem leftIcon={<Favorite />} primaryText="Following" />
+                    <MenuItem leftIcon={<MyGame />} primaryText="My Games" />
                     <Link to={'/games'} style={styles.link}>
-                        <MenuItem leftIcon={<Game />} primaryText="Games" />
+                        <MenuItem leftIcon={<Game />} primaryText="All Games" />
                     </Link>
                     <MenuItem leftIcon={<Channel />} primaryText="Top Channels" />
                     <MenuItem leftIcon={<Video />} primaryText="Top Videos" />
