@@ -1,17 +1,13 @@
 import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
-import CircularProgress from 'material-ui/CircularProgress';
-import Favorite from 'material-ui/svg-icons/action/favorite';
-import Face from 'material-ui/svg-icons/action/face';
-import IconButton from 'material-ui/IconButton';
-import Video from 'material-ui/svg-icons/av/video-library';
 import Avatar from 'material-ui/Avatar';
+import ParallaxComponent from 'react-parallax-component';
 /*>>>>>>=============================================<<<<<<*/
 
 import TwitchChat from '../components/Stream/TwitchChat';
 import StreamCard from '../components/Stream/StreamCard';
-import IframeVideo from '../components/IframeVideo';
+import IframeVideo from '../components/Stream/IframeVideo';
+import LoadingCircular from '../components/layout/LoadingCircular';
 /*>>>>>>=============================================<<<<<<*/
 
 const styles = {
@@ -38,13 +34,19 @@ const styles = {
     },
     stream: {
         marginTop: '30px'
+    },
+    banner: {
+        width: '100%'
+    },
+    paralax: {
+        zIndex: '-1'
     }
 };
 
 const StreamSingle = ({ stream, err, isFetched }) => {
     let mature;
     if (!isFetched) {
-        return <CircularProgress style={styles.circle} size={2}/>;
+        return <LoadingCircular />;
     } else if (err === null) {
         // Create a default logo if null
         if (stream.logo === null) {
@@ -53,29 +55,31 @@ const StreamSingle = ({ stream, err, isFetched }) => {
         if (stream.mature === true) {
             mature = <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/ESRB_2013_Mature.svg/2000px-ESRB_2013_Mature.svg.png"
-                alt="Mature Contnet" height="70" width="70" />;
+                alt="Mature Contnet"
+                height="70"
+                width="70" />;
         }
-        const { status, display_name, name, game, logo, followers, views, videos } = stream;
+        const { status, display_name, name, game, logo, followers, views, videos, profile_banner } = stream;
         return (
             <div className="wrap container-fluid">
                 <div className="row" style={styles.title}>
-                    <div className="col-md-offset-1 col-lg-offset-1 col-md-1 col-lg-1">
+                    <div className="col-md-offset-2 col-lg-offset-2 col-md-1 col-lg-1">
                         <Avatar
                             src={logo}
                             size={60}
                         />
                     </div>
-                    <div className="col-md-8 col-lg-8">
+                    <div className="col-md-6 col-lg-6">
                         <h3 style={styles.titleCenter}>{status}</h3>
                     </div>
                 </div>
                 <div className="row" style={styles.stream}>
-                    <div className="col-md-offset-1 col-md-6 col-lg-offset-1 col-lg-6">
+                    <div className="col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">
                         <IframeVideo name={name} />
                         <br />
                         <TwitchChat name={name} />
                     </div>
-                    <div className="col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3">
+                    <div className="col-md-offset-2 col-md-2 col-lg-offset-2 col-lg-2">
                         <StreamCard stream={stream} />
                     </div>
                 </div>
