@@ -29,6 +29,15 @@ const styles = {
     },
     video: {
         width: 60
+    },
+    title: {
+        marginTop: '25px'
+    },
+    titleCenter: {
+        textAlign: 'center'
+    },
+    stream: {
+        marginTop: '30px'
     }
 };
 
@@ -48,16 +57,28 @@ const StreamSingle = ({ stream, err, isFetched }) => {
         }
         const { status, display_name, name, game, logo, followers, views, videos } = stream;
         return (
-            <div>
-                <Avatar
-                    src={logo}
-                    size={60}
-                />
-                <h2>{status}</h2>
-                <StreamCard stream={stream} />
-                <br/>
-                <IframeVideo name={name} />
-                <TwitchChat name={name} />
+            <div className="wrap container-fluid">
+                <div className="row" style={styles.title}>
+                    <div className="col-md-offset-1 col-lg-offset-1 col-md-1 col-lg-1">
+                        <Avatar
+                            src={logo}
+                            size={60}
+                        />
+                    </div>
+                    <div className="col-md-8 col-lg-8">
+                        <h3 style={styles.titleCenter}>{status}</h3>
+                    </div>
+                </div>
+                <div className="row" style={styles.stream}>
+                    <div className="col-md-offset-1 col-md-6 col-lg-offset-1 col-lg-6">
+                        <IframeVideo name={name} />
+                        <br />
+                        <TwitchChat name={name} />
+                    </div>
+                    <div className="col-md-offset-1 col-md-3 col-lg-offset-1 col-lg-3">
+                        <StreamCard stream={stream} />
+                    </div>
+                </div>
             </div>
         );
     } else {
