@@ -28,7 +28,7 @@ const StreamsList = ({ streams }) => (
             style={styles.gridList}>
             {streams.map((stream) => (
                 <Link
-                    to={`streams/channel/${stream.channel.name}`}
+                    to={`/streams/${stream.channel.name}`}
                     key={`${stream._id}_Link`}
                     params={{name: stream.channel.name}}>
                     <StreamsListSingle key={stream._id} {...stream} />

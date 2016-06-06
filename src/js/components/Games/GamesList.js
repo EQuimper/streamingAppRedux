@@ -38,7 +38,7 @@ const GamesList = ({ games }) => (
                     <Link
                         params={{ game: name }}
                         key={`${_id}_Link`}
-                        to={`streams/${name}`}>
+                        to={`/games/${name}`}>
                         <GridTile
                             style={styles.tile}
                             title={name}

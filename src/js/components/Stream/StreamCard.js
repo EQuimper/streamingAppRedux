@@ -73,11 +73,11 @@ const StreamCard = ({ stream }) => {
                             disabled
                             primaryText={
                                 <div>
-                                    <img src={imgMature} alt="Mature Contnet" height="70" width="70" />
+                                    <img src={imgMature} alt="Mature Content" height="70" width="70" />
                                 </div>
                         } /> : null }
                     <Divider />
-                    <Link style={styles.link} to={`/streams/channel/${name}/videos`} params={{name}}>
+                    <Link style={styles.link} to={`/streams/${name}/videos`} params={{name}} key={`${name}_VIDEOS`}>
                         <ListItem
                             primaryText={
                                 <Video />
