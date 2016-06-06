@@ -22,21 +22,3 @@ export const reqAllGames = (games) => {
     };
 };
 
-//export const reqOneGame = (game) => {
-//    const promise = new Promise((resolve, reject) => {
-//        request
-//            .get(`https://api.twitch.tv/kraken/channels/${name}`)
-//            .end((err, res) => {
-//                if (err) {
-//                    reject(err);
-//                } else {
-//                    resolve(res.body);
-//                }
-//            });
-//
-//    });
-//    return {
-//        type: types.RECEIVE_STREAM,
-//        payload: promise
-//    };
-//};

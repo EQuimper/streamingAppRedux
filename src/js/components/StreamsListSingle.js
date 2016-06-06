@@ -33,9 +33,4 @@ const StreamsListSingle = (props) => {
     );
 };
 
-//StreamsListSingle.propTypes = {
-//    const { streams } = this.props,
-//    streams: PropTypes.array.isRequired
-//};
-
 export default Radium(StreamsListSingle);
