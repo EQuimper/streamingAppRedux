@@ -46,7 +46,7 @@ export default class NavBar extends Component {
             <div>
                 <AppBar
                     style={styles.base}
-                    title="TITLE HERE"
+                    title="Game Streaming"
                     zDepth={2}
                     iconElementLeft={
                         <IconButton onTouchTap={this.handleToggle}>
