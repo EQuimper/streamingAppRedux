@@ -46,7 +46,7 @@ const Home = () => (
                 </ul>
                 <Divider />
                 <h3>This app is still in progress.</h3>
-                <h4>Futur features:</h4>
+                <h4>Future features:</h4>
                 <ul style={styles.list}>
                     <li>Can have favorite streamers.</li>
                     <li>Can have a dashboard and a login.</li>
