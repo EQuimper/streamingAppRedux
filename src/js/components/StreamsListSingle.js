@@ -1,8 +1,16 @@
 import React from 'react';
 import { GridTile } from 'material-ui/GridList'; // http://www.material-ui.com/#/components/grid-list
-import styles from '../../css/StreamsListSingle.css';
+//import styles from '../../css/StreamsListSingle.css';
 import RemoveRedEye from 'material-ui/svg-icons/image/remove-red-eye';
 /*>>>>>>=============================================<<<<<<*/
+
+const styles = {
+    root: {
+        color: 'white',
+        paddingRight: '25px',
+        paddingLeft: '5px'
+    }
+};
 
 const StreamsListSingle = (props) => {
     const { preview, game, channel, viewers } = props;
@@ -17,7 +25,7 @@ const StreamsListSingle = (props) => {
             actionIcon={
                 <div>
                     <RemoveRedEye color="white"/>
-                    <span className={styles.root}>{viewers}</span>
+                    <span style={styles.root}>{viewers}</span>
                 </div>
             }>
             <img src={preview.medium} alt={name} />

@@ -42,7 +42,7 @@ export default (
                     component={ChannelVideos}
                     onEnter={boundRouteActions.boundAllVideosFromChannel} />
             </Route>
-            <Route path="*" component={NoMatch} />
+            <Route path="*" component={Home} />
         </Route>
     </Router>
 );
