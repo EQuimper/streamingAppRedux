@@ -27,6 +27,7 @@ const Home = () => (
             <div style={styles.text}>
                 <br />
                 <h1>Welcome to my Twitch Api project</h1>
+                <h2>For start click on the Navbar icon in the top left and click the button All Games</h2>
                 <Divider />
                 <h3>Tools used:</h3>
                 <ul style={styles.list}>
