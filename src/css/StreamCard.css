@@ -1,0 +1,18 @@
+.card {
+    width: 250px;
+    height: auto;
+}
+
+.img {
+    min-width: 80%;
+    max-width: 80%;
+    margin: 20px 25px 0;
+}
+
+.list {
+    text-align: center;
+}
+
+.link {
+    text-decoration: none;
+}

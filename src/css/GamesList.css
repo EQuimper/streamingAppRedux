@@ -1,0 +1,40 @@
+/*const styles = {*/
+/*root: {*/
+/*display: 'flex',*/
+/*flexWrap: 'wrap',*/
+/*justifyContent: 'space-around',*/
+/*marginTop: '30px'*/
+/*},*/
+/*gridList: {*/
+/*width: '90%',*/
+/*height: 'auto',*/
+/*marginBottom: 26*/
+/*},*/
+/*tile: {*/
+/*boxShadow: 'rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px'*/
+/*},*/
+/*views: {*/
+/*color: 'white'*/
+/*};*/
+/*}*/
+
+.root {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.gridList {
+    width: 90%;
+    height: auto;
+    margin-bottom: 26px;
+}
+
+.title {
+    box-shadow: rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px;
+}
+
+.views {
+    color: white;
+}
