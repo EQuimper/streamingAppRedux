@@ -19,7 +19,7 @@ const styles = {
         marginBottom: 26
     },
     tile: {
-        boxShadow: 'rgba(0, 0, 0, 0.156863) 0px 3px 10px, rgba(0, 0, 0, 0.227451) 0px 3px 10px'
+        boxShadow: '2px 2px 2px black'
     },
     views: {
         color: 'white'

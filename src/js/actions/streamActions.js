@@ -7,7 +7,7 @@ import * as types from '../constants/';
 export const reqStreams = (game) => {
     const promise = new Promise((resolve, reject) => {
         request
-            .get(`https://api.twitch.tv/kraken/search/streams?limit=100&offset=25&q=${game}`)
+            .get(`https://api.twitch.tv/kraken/search/streams?limit=100&offset=0&q=${game}`)
             .end((err, res) => {
                 if (err) {
                     reject(err);
