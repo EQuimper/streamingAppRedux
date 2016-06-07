@@ -6,8 +6,8 @@ import Divider from 'material-ui/Divider';
 const styles = {
     root: {
         textAlign: 'center',
-        margin: '90px auto',
-        height: '600px',
+        margin: '70px auto',
+        height: '700px',
         width: '600px'
     },
     text: {
@@ -28,6 +28,7 @@ const Home = () => (
                 <br />
                 <h1>Welcome to my Twitch Api project</h1>
                 <h2>For start click on the Navbar icon in the top left and click the button All Games</h2>
+                <h2>After just need to choose a stream and you can see it live, you can chat too.</h2>
                 <Divider />
                 <h3>Tools used:</h3>
                 <ul style={styles.list}>
