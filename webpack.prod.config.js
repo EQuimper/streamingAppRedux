@@ -4,25 +4,21 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
-
     entry: [
         './src/js/index'
     ],
-
     output: {
         path: path.join(__dirname, 'dist'),
         filename: 'bundle.js',
         publicPath: '/static/'
     },
-
     plugins: [
         new ExtractTextPlugin('app.css', {
             allChunks: true
         }),
-        new webpack.optimize.DedupePlugin(),
+        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({
-            minimize: true,
-            compress: {
+            compressor: {
                 warnings: false
             }
         }),

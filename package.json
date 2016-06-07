@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
       "start": "node server.js",
-      "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors"
+      "clean": "rimraf dist",
+      "build:webpack": "NODE_ENV=production webpack --config webpack.prod.config.js",
+      "build": "npm run clean && npm run build:webpack"
   },
   "keywords": [
     "redux",
