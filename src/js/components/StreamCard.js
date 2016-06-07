@@ -1,30 +1,23 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import styles from '../../css/StreamCard.css';
 import { Link } from 'react-router';
 import { Card, CardHeader, CardMedia, CardText } from 'material-ui/Card';
 import { List, ListItem } from 'material-ui/List';
 import Divider from 'material-ui/Divider';
 import Favorite from 'material-ui/svg-icons/action/favorite';
 import Face from 'material-ui/svg-icons/action/face';
-import IconButton from 'material-ui/IconButton';
 import Video from 'material-ui/svg-icons/av/video-library';
 
 /*>>>>>>=============================================<<<<<<*/
 
-const styles = {
-    card: {
-        width: '250px',
-        height: 'auto'
-    },
+const { object } = PropTypes;
+
+// Need cause override stuff
+const Styles = {
     img: {
-        minWidth: '80%',
         maxWidth: '80%',
+        minWidth: '80%',
         margin: '20px 25px 0'
-    },
-    list: {
-        textAlign: 'center'
-    },
-    link: {
-        textDecoration: 'none'
     }
 };
 
@@ -32,12 +25,12 @@ const StreamCard = ({ stream }) => {
     const { logo, display_name, game, followers, views, name, mature } = stream;
     const imgMature = 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/ESRB_2013_Mature.svg/2000px-ESRB_2013_Mature.svg.png';
     return (
-        <Card style={styles.card}>
+        <Card className={styles.card}>
             <CardMedia>
-                <img style={styles.img} src={logo} alt={`${display_name}_Logo`} />
+                <img style={Styles.img} src={logo} alt={`${display_name}_Logo`} />
             </CardMedia>
             <CardText>
-                <List style={styles.list}>
+                <List className={styles.list}>
                     <ListItem
                         disabled
                         primaryText={
@@ -77,7 +70,7 @@ const StreamCard = ({ stream }) => {
                                 </div>
                         } /> : null }
                     <Divider />
-                    <Link style={styles.link} to={`/streams/${name}/videos`} params={{name}} key={`${name}_VIDEOS`}>
+                    <Link className={styles.link} to={`/streams/${name}/videos`} params={{name}} key={`${name}_VIDEOS`}>
                         <ListItem
                             primaryText={
                                 <Video />
@@ -90,6 +83,10 @@ const StreamCard = ({ stream }) => {
             </CardText>
         </Card>
     );
+};
+
+StreamCard.propTypes = {
+    stream: object.isRequired
 };
 
 export default StreamCard;

@@ -4,9 +4,9 @@ import Avatar from 'material-ui/Avatar';
 import ParallaxComponent from 'react-parallax-component';
 /*>>>>>>=============================================<<<<<<*/
 
-import TwitchChat from '../components/Stream/TwitchChat';
-import StreamCard from '../components/Stream/StreamCard';
-import IframeVideo from '../components/Stream/IframeVideo';
+import TwitchChat from '../components/TwitchChat';
+import StreamCard from '../components/StreamCard';
+import IframeVideo from '../components/IframeVideo';
 import LoadingCircular from '../components/layout/LoadingCircular';
 /*>>>>>>=============================================<<<<<<*/
 

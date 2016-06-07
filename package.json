@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+      "start": "node server.js",
+      "build": "NODE_ENV=production webpack --config ./webpack.prod.config.js --progress --colors"
   },
   "keywords": [
     "redux",
@@ -22,6 +23,8 @@
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
     "body-parser": "^1.15.1",
+      "css-loader": "^0.23.1",
+      "cssnext-loader": "^1.0.1",
     "express": "^4.13.4",
     "jsxstyle": "0.0.18",
     "material-ui": "^0.15.0",
@@ -29,9 +32,8 @@
     "path": "^0.12.7",
     "radium": "^0.17.1",
     "react": "^15.1.0",
+      "react-css-modules": "^3.7.6",
     "react-dom": "^15.1.0",
-      "react-parallax": "^0.4.3",
-      "react-parallax-component": "^1.0.5",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
     "react-router-redux": "^4.0.4",
@@ -40,6 +42,7 @@
     "redux-logger": "^2.6.1",
     "redux-promise-middleware": "^3.0.0",
     "request": "^2.72.0",
+      "style-loader": "^0.13.1",
     "superagent": "^2.0.0-alpha.3",
     "webpack": "^1.13.1"
   },

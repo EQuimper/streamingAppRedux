@@ -53,9 +53,6 @@ export default class NavBar extends Component {
                             <MenuIcon />
                         </IconButton>
                     }
-                    iconElementRight={
-                        <Link to="/streams">Streams</Link>
-                    }
                 />
                 <Drawer
                     docked={false}

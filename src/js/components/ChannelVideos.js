@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { connect } from 'react-redux';
 import CircularProgress from 'material-ui/CircularProgress';
 /*>>>>>>=============================================<<<<<<*/
 
 import VideosList from './VideosList';
 /*>>>>>>=============================================<<<<<<*/
+
+const { array, bool } = PropTypes;
 
 const styles = {
     circle: {
@@ -30,5 +32,10 @@ const ChannelVideos = ({ videos, err, isFetched }) => {
 };
 
 const mapStateToProps = (state) => state.videos;
+
+ChannelVideos.propTypes = {
+    err: bool,
+    isFetched: bool
+};
 
 export default connect(mapStateToProps)(ChannelVideos);

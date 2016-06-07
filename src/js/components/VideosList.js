@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 /*>>>>>>=============================================<<<<<<*/
 
 import Video from './Video';
 /*>>>>>>=============================================<<<<<<*/
+
+const { array } = PropTypes;
 
 const VideosList = ({ videos }) => (
     <div>
@@ -16,5 +18,9 @@ const VideosList = ({ videos }) => (
         })}
     </div>
 );
+
+VideosList.propTypes = {
+    videos: array.isRequired
+};
 
 export default VideosList;

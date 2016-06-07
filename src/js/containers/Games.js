@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import LoadingCircular from '../components/layout/LoadingCircular';
 /*>>>>>>=============================================<<<<<<*/
 
-import GamesList from '../components/Games/GamesList';
+import GamesList from '../components/GamesList';
 /*>>>>>>=============================================<<<<<<*/
 
 const Games = ({ games, err, isFetched }) => {
