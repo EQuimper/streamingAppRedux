@@ -18,7 +18,7 @@ const styles = {
         height: 'auto',
         margin: '-20px'
     }
-}
+};
 
 const { array } = PropTypes;
 
