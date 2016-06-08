@@ -10,6 +10,7 @@ import * as routeActions from '../actions/routeActions';
 
 import App from '../containers/App';
 import StreamsApp from '../containers/StreamsApp';
+import FeaturedApp from '../containers/FeaturedApp';
 /*>>>>>>=============================================<<<<<<*/
 
 import Home from '../components/layout/Home';
@@ -24,7 +25,7 @@ const boundRouteActions = bindActionCreators(routeActions, store.dispatch);
 export default (
     <Router history={history}>
         <Route path="/" component={App}>
-            <IndexRoute component={Home} />
+            <IndexRoute component={FeaturedApp} onEnter={boundRouteActions.boundAllFeatured} />
             <Route path="games">
                 <IndexRoute component={Games} onEnter={boundRouteActions.boundAllGames} />
                 <Route path=":game">
@@ -33,6 +34,7 @@ export default (
                         onEnter={boundRouteActions.boundAllStreams} />
                 </Route>
             </Route>
+            <Route path={"featured"} component={FeaturedApp} onEnter={boundRouteActions.boundAllFeatured} />
             <Route path={"streams/:name"}>
                 <IndexRoute
                     onEnter={boundRouteActions.boundOneStream}

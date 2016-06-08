@@ -71,7 +71,9 @@ export default class NavBar extends Component {
                     <Link to={'/games'} style={styles.link}>
                         <MenuItem leftIcon={<Game />} primaryText="All Games" />
                     </Link>
-                    <MenuItem leftIcon={<Channel />} primaryText="Top Channels" />
+                    <Link to="/" style={styles.link}>
+                        <MenuItem leftIcon={<Channel />} primaryText="Featured Channels" />
+                    </Link>
                     <MenuItem leftIcon={<Video />} primaryText="Top Videos" />
                     <Divider />
                     <MenuItem disabled primaryText="Recommended Channels" />

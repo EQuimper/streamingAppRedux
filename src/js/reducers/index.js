@@ -6,5 +6,6 @@ export default combineReducers({
     stream: require('./singleStreamReducer').default,
     videos: require('./videoReducer').default,
     games: require('./gameReducer').default,
+    featured: require('./featureStreamReducer').default,
     routing: routerReducer
 });
