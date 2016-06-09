@@ -55,11 +55,11 @@ const StreamSingle = ({ stream, err, isFetched }) => {
         if (stream.mature === true) {
             mature = <img
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/ESRB_2013_Mature.svg/2000px-ESRB_2013_Mature.svg.png"
-                alt="Mature Contnet"
+                alt="Mature Content"
                 height="70"
                 width="70" />;
         }
-        const { status, display_name, name, game, logo, followers, views, videos, profile_banner } = stream;
+        const { status, name, logo } = stream;
         return (
             <div className="wrap container-fluid">
                 <div className="row" style={styles.title}>
