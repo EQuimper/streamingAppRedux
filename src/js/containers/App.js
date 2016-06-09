@@ -9,6 +9,7 @@ import NavBar from '../components/layout/NavBar';
 /*>>>>>>=============================================<<<<<<*/
 
 injectTapEventPlugin(); // Need it cause of material for mobile
+
 // Make the fonts Roboto cause of Material
 const Fonts = ({ children }) => (
     <Block

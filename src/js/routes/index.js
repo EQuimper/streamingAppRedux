@@ -44,7 +44,7 @@ export default (
                     component={ChannelVideos}
                     onEnter={boundRouteActions.boundAllVideosFromChannel} />
             </Route>
-            <Route path="*" component={Home} />
+            <Route path="*" component={Games} onEnter={boundRouteActions.boundAllGames}/>
         </Route>
     </Router>
 );
