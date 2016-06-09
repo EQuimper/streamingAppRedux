@@ -56,13 +56,13 @@ export default class NavBar extends Component {
                 />
                 <Drawer
                     docked={false}
-                    width={225}
+                    width={250}
                     open={this.state.open}
-                    onRequestChange={(open) => this.setState({open})}
+                    onRequestChange={(open) => this.setState({open: false})}
                 >
                     <MenuItem style={styles.avatar} disabled>
                         <Avatar
-                            size={70}
+                            size={80}
                             src='https://c1.staticflickr.com/5/4012/5126739463_e5598d33fb.jpg' />
                     </MenuItem>
                     <MenuItem leftIcon={<Account />} primaryText="My Account" />
