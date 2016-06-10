@@ -30,6 +30,10 @@ const styles = {
     },
     link: {
         textDecoration: 'none'
+    },
+    brand: {
+        textDecoration: 'none',
+        color: 'white'
     }
 };
 
@@ -45,9 +49,8 @@ export default class NavBar extends Component {
         return (
             <div>
                 <AppBar
-                    style={styles.base}
-                    title="Game Streaming"
-                    zDepth={2}
+                    title={<Link to="/" style={styles.brand}>GameStreaming</Link>}
+                    zDepth={5}
                     iconElementLeft={
                         <IconButton onTouchTap={this.handleToggle}>
                             <MenuIcon />
@@ -71,7 +74,7 @@ export default class NavBar extends Component {
                     <Link to={'/games'} style={styles.link}>
                         <MenuItem leftIcon={<Game />} primaryText="All Games" />
                     </Link>
-                    <Link to="/" style={styles.link}>
+                    <Link to="/featured" style={styles.link}>
                         <MenuItem leftIcon={<Channel />} primaryText="Featured Channels" />
                     </Link>
                     <MenuItem leftIcon={<Video />} primaryText="Top Videos" />
