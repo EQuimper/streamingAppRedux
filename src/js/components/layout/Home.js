@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -37,10 +38,14 @@ const Home = () => (
         <h2 style={styles.title}>GameStreaming</h2>
         <div style={styles.btnGroup}>
             <div style={styles.button}>
-                <RaisedButton primary={true} label="Sign Up"/>
+                <Link to="games">
+                    <RaisedButton primary={true} label="All Games"/>
+                </Link>
             </div>
             <div style={styles.button}>
-                <RaisedButton label="Log In"/>
+                <a href="https://github.com/EQuimper/streamingAppRedux" target="_blank">
+                    <RaisedButton label="Github"/>
+                </a>
             </div>
         </div>
     </div>
