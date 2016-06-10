@@ -9,7 +9,7 @@ const gameReducer = (games = { isFetched: false }, action) => {
             return {
                 games: action.payload,
                 err: null,
-                isFetched: true
+                isFetched: true,
             };
         case `${types.RECEIVE_ALL_GAMES}_REJECTED`:
             return {
@@ -21,5 +21,6 @@ const gameReducer = (games = { isFetched: false }, action) => {
             return games;
     }
 };
+
 /*>>>>>>=============================================<<<<<<*/
 export default gameReducer;
