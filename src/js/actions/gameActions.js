@@ -22,3 +22,16 @@ export const reqAllGames = (games) => {
     };
 };
 
+export const addGameToFavorite = (gameId) => {
+    return {
+        type: types.ADD_GAME_TO_FAVORITE,
+        gameId
+    };
+};
+
+export const removeGameFromFavorite = (gameId) => {
+    return {
+        type: types.REMOVE_GAME_FROM_FAVORITE,
+        gameId
+    };
+};

@@ -25,7 +25,7 @@ const boundRouteActions = bindActionCreators(routeActions, store.dispatch);
 export default (
     <Router history={history}>
         <Route path="/" component={App}>
-            <IndexRoute component={FeaturedApp} onEnter={boundRouteActions.boundAllFeatured} />
+            <IndexRoute component={Home}/>
             <Route path="games">
                 <IndexRoute component={Games} onEnter={boundRouteActions.boundAllGames} />
                 <Route path=":game">
