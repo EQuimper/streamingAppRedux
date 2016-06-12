@@ -15,6 +15,10 @@ const favoriteReducer = (gameFavorites = initialState, action) => {
             return [
                 ...gameFavorites.filter(info => info.game._id !== _id)
             ];
+        case types.REMOVE_GAME_FROM_LIST_FAVORITE:
+            return [
+                ...gameFavorites.filter(info => info.game._id !== action.gameId)
+            ];
         default:
             return gameFavorites;
     }

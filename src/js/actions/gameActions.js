@@ -47,3 +47,15 @@ export const removeGameFromFavorite = (game) => {
         game
     };
 };
+
+export const removeGameFromListFavorite = (gameId) => {
+    let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
+    if (gameFavorites) {
+        gameFavorites = gameFavorites.filter((gameFavorites) => gameFavorites.game._id !== gameId);
+        localStorage.setItem('gameFavorites', JSON.stringify(gameFavorites));
+    }
+    return {
+        type: types.REMOVE_GAME_FROM_LIST_FAVORITE,
+        gameId
+    };
+};

@@ -5,11 +5,11 @@ import { Card, CardHeader, CardText } from 'material-ui/Card';
 
 const styles = {
     card: {
-        width: '30%'
+        width: '40%'
     }
 };
 
-const FavoritesList = ({ gameFavorites }) => {
+const FavoritesList = ({ gameFavorites, actions }) => {
     if (gameFavorites.length == 0) {
         return <h1>No game liked yet!</h1>;
     }
@@ -19,7 +19,7 @@ const FavoritesList = ({ gameFavorites }) => {
                         showExpandableButton={true} />
             <CardText expandable={true}>
                 <List>
-                    {gameFavorites.map((game, i) => <FavoriteSingle key={i} {...game} />)}
+                    {gameFavorites.map((game, i) => <FavoriteSingle key={i} {...game} actions={actions} />)}
                 </List>
             </CardText>
         </Card>

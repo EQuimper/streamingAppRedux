@@ -72,7 +72,7 @@ class GamesList extends Component {
                                 key={_id}
                                 subtitle={<div><h3>{`${viewers} Viewers`}</h3></div>}
                                 actionIcon={
-                                    this.props.gameFavorites.find((info) =>  info.game._id === _id) ?
+                                    this.props.gameFavorites.find((info) => info.game._id === _id) ?
                                         <IconButton onClick={this.removeFavorite.bind(this, game)}><Star color="yellow" /></IconButton> :
                                         <IconButton onClick={this.addFavorite.bind(this, game)}><StarBorder color="white" /></IconButton>}>
                                 <Link
