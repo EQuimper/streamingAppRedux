@@ -43,22 +43,6 @@ class GamesList extends Component {
         };
     }
 
-    //handleClick = (index) => {
-    //    let game = this.props.games.filter((game, i) => {
-    //        return index == i;
-    //    });
-    //
-    //    console.log('Click on', game);
-    //    this.setState({
-    //
-    //    });
-    //    if (this.state.gameFavorite == false) {
-    //        toastr.success('Game add in your favorites');
-    //    } else {
-    //        toastr.info('Game removed from your favorites');
-    //    }
-    //};
-
     removeFavorite(_id) {
         this.props.actions.removeGameFromFavorite(_id);
         toastr.error('Game remove from your favorite!');
@@ -71,9 +55,6 @@ class GamesList extends Component {
 
     render() {
         const { games, actions } = this.props;
-        console.log(actions);
-        //const { favoriteActions } = actions;
-        //console.log(favoriteActions);
         return (
             <div style={styles.root}>
                 <GridList
@@ -94,10 +75,7 @@ class GamesList extends Component {
                                 actionIcon={
                                     this.props.favorite.indexOf(_id) > -1 ?
                                         <IconButton onClick={this.removeFavorite.bind(this, _id)}><Star color="yellow" /></IconButton> :
-                                        <IconButton onClick={this.addFavorite.bind(this, _id)}><StarBorder color="white" /></IconButton>}
-                            >
-
-
+                                        <IconButton onClick={this.addFavorite.bind(this, _id)}><StarBorder color="white" /></IconButton>}>
                                 <Link
                                     params={{ game: name }}
                                     key={`${_id}_Link`}
