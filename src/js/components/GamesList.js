@@ -39,41 +39,22 @@ class GamesList extends Component {
         super(props);
 
         this.state = {
-            favorite: []
+            gameFavorites: []
         };
     }
 
-    //handleClick = (index) => {
-    //    let game = this.props.games.filter((game, i) => {
-    //        return index == i;
-    //    });
-    //
-    //    console.log('Click on', game);
-    //    this.setState({
-    //
-    //    });
-    //    if (this.state.gameFavorite == false) {
-    //        toastr.success('Game add in your favorites');
-    //    } else {
-    //        toastr.info('Game removed from your favorites');
-    //    }
-    //};
-
-    removeFavorite(_id) {
-        this.props.actions.removeGameFromFavorite(_id);
+    removeFavorite(game) {
+        this.props.actions.removeGameFromFavorite(game);
         toastr.error('Game remove from your favorite!');
     }
 
-    addFavorite(_id) {
-        this.props.actions.addGameToFavorite(_id);
+    addFavorite(game) {
+        this.props.actions.addGameToFavorite(game);
         toastr.success('Game add to your favorite!');
     }
 
     render() {
-        const { games, actions } = this.props;
-        console.log(actions);
-        //const { favoriteActions } = actions;
-        //console.log(favoriteActions);
+        const { games } = this.props;
         return (
             <div style={styles.root}>
                 <GridList
@@ -83,7 +64,6 @@ class GamesList extends Component {
                     {games.map((game, i) => {
                         const { viewers } = game;
                         const { name, _id, box } = game.game;
-                        //let boundClick = this.handleClick.bind(this, i);
                         return (
                             <GridTile
                                 style={styles.tile}
@@ -92,12 +72,9 @@ class GamesList extends Component {
                                 key={_id}
                                 subtitle={<div><h3>{`${viewers} Viewers`}</h3></div>}
                                 actionIcon={
-                                    this.props.favorite.indexOf(_id) > -1 ?
-                                        <IconButton onClick={this.removeFavorite.bind(this, _id)}><Star color="yellow" /></IconButton> :
-                                        <IconButton onClick={this.addFavorite.bind(this, _id)}><StarBorder color="white" /></IconButton>}
-                            >
-
-
+                                    this.props.gameFavorites.find((info) => info.game._id === _id) ?
+                                        <IconButton onClick={this.removeFavorite.bind(this, game)}><Star color="yellow" /></IconButton> :
+                                        <IconButton onClick={this.addFavorite.bind(this, game)}><StarBorder color="white" /></IconButton>}>
                                 <Link
                                     params={{ game: name }}
                                     key={`${_id}_Link`}
@@ -113,7 +90,7 @@ class GamesList extends Component {
     }
 }
 
-const mapState = (state) => ({ favorite: state.favorite});
+const mapState = (state) => ({ gameFavorites: state.gameFavorites });
 const mapDispatch = (dispatch) => ({ actions: bindActionCreators(favoriteActions, dispatch) });
 
 export default connect(mapState, mapDispatch)(GamesList);
