@@ -16,8 +16,9 @@ import FeaturedApp from '../containers/FeaturedApp';
 import Home from '../components/layout/Home';
 import Games from '../containers/Games';
 import NoMatch from '../components/layout/NoMatch';
-import StreamSingle from '../containers/StreamSingle.js';
+import StreamSingle from '../containers/StreamSingle';
 import ChannelVideos from '../components/ChannelVideos';
+import FavoritesList from '../containers/FavoritesApp';
 /*>>>>>>=============================================<<<<<<*/
 
 const boundRouteActions = bindActionCreators(routeActions, store.dispatch);
@@ -44,6 +45,7 @@ export default (
                     component={ChannelVideos}
                     onEnter={boundRouteActions.boundAllVideosFromChannel} />
             </Route>
+            <Route path={"favorites"} component={FavoritesList} />
             <Route path="*" component={Home} />
         </Route>
     </Router>
