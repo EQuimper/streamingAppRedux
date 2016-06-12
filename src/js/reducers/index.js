@@ -8,7 +8,7 @@ export default combineReducers({
     videos: require('./videoReducer').default,
     games: require('./gameReducer').default,
     featured: require('./featureStreamReducer').default,
-    favorite: require('./favoriteReducer').default,
+    gameFavorites: require('./favoriteReducer').default,
     routing: routerReducer,
     toastr: toastrReducer
 });

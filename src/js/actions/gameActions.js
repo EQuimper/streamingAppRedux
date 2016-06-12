@@ -22,16 +22,28 @@ export const reqAllGames = (games) => {
     };
 };
 
-export const addGameToFavorite = (gameId) => {
+export const addGameToFavorite = (game) => {
+    let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
+    if (gameFavorites) {
+        gameFavorites.push(game);
+    } else {
+        gameFavorites = [ game ];
+    }
+    localStorage.setItem('gameFavorites', JSON.stringify(gameFavorites));
     return {
         type: types.ADD_GAME_TO_FAVORITE,
-        gameId
+        game
     };
 };
 
-export const removeGameFromFavorite = (gameId) => {
+export const removeGameFromFavorite = (game) => {
+    let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
+    if (gameFavorites) {
+        gameFavorites = gameFavorites.filter((gameFavorites) => gameFavorites.game._id !== game.game._id);
+        localStorage.setItem('gameFavorites', JSON.stringify(gameFavorites));
+    }
     return {
         type: types.REMOVE_GAME_FROM_FAVORITE,
-        gameId
+        game
     };
 };
