@@ -9,7 +9,6 @@ import { toastr } from 'react-redux-toastr';
 /*>>>>>>=============================================<<<<<<*/
 
 import * as favoriteActions from '../actions/streamActions';
-
 import TwitchChat from '../components/TwitchChat';
 import StreamCard from '../components/StreamCard';
 import IframeVideo from '../components/IframeVideo';
@@ -47,10 +46,6 @@ const styles = {
 };
 
 class StreamSingle extends Component {
-    //constructor(props) {
-    //    super(props);
-    //
-    //}
 
     addStreamFavorite(stream) {
         this.props.actions.addStreamToFavorite(stream);

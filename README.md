@@ -9,6 +9,9 @@
 - Fetch all streams for the game you choose
 - Can see the streams live and chat with the iframe
 - Get all the info about the streamer
+- Can follow a stream and see it in My Following section
+- Can favorite a game and see it too
+- Have toastr to show the alert
 
 # For run this app
 - Fork it
@@ -16,5 +19,10 @@
 - Run npm install
 - Run npm start
 - Go to [localhost:3000] (http://localhost:3000/)
+
+# You want me to add features ?
+
+Just had a features request on the [issues section](https://github.com/EQuimper/streamingAppRedux/issues) and add the tag features request.
+
 
 ##### I accept contribution
