@@ -10,13 +10,15 @@ import * as routeActions from '../actions/routeActions';
 
 import App from '../containers/App';
 import StreamsApp from '../containers/StreamsApp';
+import FeaturedApp from '../containers/FeaturedApp';
 /*>>>>>>=============================================<<<<<<*/
 
 import Home from '../components/layout/Home';
 import Games from '../containers/Games';
 import NoMatch from '../components/layout/NoMatch';
-import StreamSingle from '../containers/StreamSingle.js';
+import StreamSingle from '../containers/StreamSingle';
 import ChannelVideos from '../components/ChannelVideos';
+import FavoritesList from '../containers/FavoritesApp';
 /*>>>>>>=============================================<<<<<<*/
 
 const boundRouteActions = bindActionCreators(routeActions, store.dispatch);
@@ -24,7 +26,7 @@ const boundRouteActions = bindActionCreators(routeActions, store.dispatch);
 export default (
     <Router history={history}>
         <Route path="/" component={App}>
-            <IndexRoute component={Home} />
+            <IndexRoute component={Home}/>
             <Route path="games">
                 <IndexRoute component={Games} onEnter={boundRouteActions.boundAllGames} />
                 <Route path=":game">
@@ -33,6 +35,7 @@ export default (
                         onEnter={boundRouteActions.boundAllStreams} />
                 </Route>
             </Route>
+            <Route path={"featured"} component={FeaturedApp} onEnter={boundRouteActions.boundAllFeatured} />
             <Route path={"streams/:name"}>
                 <IndexRoute
                     onEnter={boundRouteActions.boundOneStream}
@@ -42,6 +45,7 @@ export default (
                     component={ChannelVideos}
                     onEnter={boundRouteActions.boundAllVideosFromChannel} />
             </Route>
+            <Route path={"favorites"} component={FavoritesList} />
             <Route path="*" component={Home} />
         </Route>
     </Router>

@@ -1,6 +1,6 @@
 {
   "name": "twitch",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +12,7 @@
   "keywords": [
     "redux",
     "react",
+    "twitch",
     "express",
     "api"
   ],
@@ -37,6 +38,7 @@
     "react-css-modules": "^3.7.6",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
+    "react-redux-toastr": "^3.1.4",
     "react-router": "^2.4.1",
     "react-router-redux": "^4.0.4",
     "react-tap-event-plugin": "^1.0.0",
