@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import Divider from 'material-ui/Divider';
 import Avatar from 'material-ui/Avatar';
 import { ListItem } from 'material-ui/List';
 import IconButton from 'material-ui/IconButton';
@@ -17,7 +16,7 @@ const styles = {
         padding: '25px 16px 10px 80px'
     },
     item: {
-        padding: '20px 10px 30px 0'
+        padding: '30px 10px 35px 110px'
     },
     link: {
         textDecoration: 'none'
@@ -49,7 +48,7 @@ class FavoriteSingle extends Component {
     }
 
     render() {
-        const { game } = this.props;
+        const { game, viewers } = this.props;
         const { name, box } = game;
         const { medium } = box;
         const rightIconMenu = (
@@ -63,11 +62,12 @@ class FavoriteSingle extends Component {
         return (
             <div>
                 <ListItem leftAvatar={<Avatar size={60} src={medium} />}
+                          disabled={true}
                           rightIconButton={rightIconMenu}
+                          secondaryText={`Viewers: ${viewers}`}
                           primaryText={name}
                           primaryTextStyle={{marginRight: '30px'}}
                           style={styles.item} />
-                <Divider />
             </div>
         );
     }

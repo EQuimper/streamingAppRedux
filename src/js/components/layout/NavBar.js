@@ -70,7 +70,6 @@ export default class NavBar extends Component {
                         <MenuItem leftIcon={<Favorite />}
                                   primaryText="Following" />
                     </Link>
-                    <MenuItem leftIcon={<MyGame />} primaryText="My Games" />
                     <Link to={'/games'} style={styles.link}>
                         <MenuItem leftIcon={<Game />} primaryText="All Games" />
                     </Link>
