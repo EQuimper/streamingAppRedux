@@ -5,7 +5,7 @@ import { Card, CardHeader, CardText } from 'material-ui/Card';
 
 const styles = {
     card: {
-        width: '40%'
+        width: '45%'
     }
 };
 

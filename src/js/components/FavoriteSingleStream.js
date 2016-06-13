@@ -36,36 +36,34 @@ const iconButtonElement = (
     </IconButton>
 );
 
-class FavoriteSingle extends Component {
+class FavoriteSingleStream extends Component {
 
     constructor(props) {
         super(props);
     }
 
-    removeFavorite(gameId) {
-        this.props.actions.removeGameFromListFavorite(gameId);
-        toastr.error('Game remove from your favorite!');
+    removeFavorite(_id) {
+        this.props.actions.removeStreamToFavorite(_id);
+        toastr.error('This stream have been remove from your favorite!');
     }
 
     render() {
-        const { game, viewers } = this.props;
-        const { name, box } = game;
-        const { medium } = box;
+        const { _id, display_name, logo, game } = this.props;
         const rightIconMenu = (
             <IconMenu iconButtonElement={iconButtonElement}>
-                <Link to={`/games/${name}`} style={styles.link}><MenuItem>See <Eye
+                <Link to={`/streams/${display_name}`} style={styles.link}><MenuItem>See <Eye
                     style={styles.icon} /></MenuItem></Link>
-                <MenuItem onClick={this.removeFavorite.bind(this, game._id)}>Delete <Cancel
+                <MenuItem onClick={this.removeFavorite.bind(this, _id)}>Delete <Cancel
                     style={styles.icon} /></MenuItem>
             </IconMenu>
         );
         return (
             <div>
-                <ListItem leftAvatar={<Avatar size={60} src={medium} />}
+                <ListItem leftAvatar={<Avatar size={60} src={logo} />}
                           disabled={true}
                           rightIconButton={rightIconMenu}
-                          secondaryText={`Viewers: ${viewers}`}
-                          primaryText={name}
+                          primaryText={display_name}
+                          secondaryText={`Play: ${game}`}
                           primaryTextStyle={{marginRight: '30px'}}
                           style={styles.item} />
             </div>
@@ -73,4 +71,4 @@ class FavoriteSingle extends Component {
     }
 }
 
-export default FavoriteSingle;
+export default FavoriteSingleStream;
