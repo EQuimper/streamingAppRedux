@@ -40,3 +40,29 @@ export const reqOneStream = (name) => {
         payload: promise
     };
 };
+
+export const addStreamToFavorite = (stream) => {
+    let streamFavorites = JSON.parse(localStorage.getItem('streamFavorites'));
+    if (streamFavorites) {
+        streamFavorites.push(stream);
+    } else {
+        streamFavorites = [ stream ];
+    }
+    localStorage.setItem('streamFavorites', JSON.stringify(streamFavorites));
+    return {
+        type: types.ADD_STREAM_TO_FAVORITE,
+        stream
+    };
+};
+
+export const removeStreamToFavorite = (streamId) => {
+    let streamFavorites = JSON.parse(localStorage.getItem('streamFavorites'));
+    if (streamFavorites) {
+        streamFavorites = streamFavorites.filter((streamFavorites) => streamFavorites._id !== streamId);
+        localStorage.setItem('streamFavorites', JSON.stringify(streamFavorites));
+    }
+    return {
+        type: types.REMOVE_STREAM_TO_FAVORITE,
+        streamId
+    };
+};
