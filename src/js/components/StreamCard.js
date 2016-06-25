@@ -10,7 +10,7 @@ import Video from "material-ui/svg-icons/av/video-library";
 
 const styles = {
   card: {
-    width:  '250xp',
+    width:  '100%',
     height: 'auto'
   },
   img:  {
