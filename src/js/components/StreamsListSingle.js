@@ -8,16 +8,18 @@ const styles = {
     color:        'white',
     paddingRight: '25px',
     paddingLeft:  '5px'
+  },
+  tile: {
+    boxShadow: '2px 2px 2px black'
   }
 };
 
-const StreamsListSingle = (props) => {
-
+const StreamsListSingle = props => {
   const { preview, game, channel, viewers } = props;
   const { name } = channel;
-
   return (
     <GridTile
+      style={styles.tile}
       titleBackground="linear-gradient(
         to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.3) 70%,rgba(0,0,0,0) 100%
       )"
@@ -32,7 +34,6 @@ const StreamsListSingle = (props) => {
       <img src={preview.medium} alt={name} />
     </GridTile>
   );
-
 };
 
 export default StreamsListSingle;

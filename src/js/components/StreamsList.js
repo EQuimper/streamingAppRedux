@@ -14,6 +14,7 @@ const styles = {
   gridList: {
     width:  '100%',
     height: 'auto',
+    marginTop: 30,
     margin: '-20px'
   }
 };
@@ -21,9 +22,8 @@ const styles = {
 const StreamsList = ({ streams }) => (
 
   <div style={styles.root}>
-    <h1>{streams[ 0 ].game}</h1>
-    <GridList cellHeigth={250}
-              cols={4}
+    <GridList cellHeigth={400}
+              cols={3}
               style={styles.gridList}>
       {streams.map((stream) => (
         <Link to={`/streams/${stream.channel.name}`}

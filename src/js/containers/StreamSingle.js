@@ -17,39 +17,11 @@ import { purple500 } from "material-ui/styles/colors";
 
 
 const styles = {
-  //circle:      {
-  //  left: '45%',
-  //  top:  '250px'
-  //},
-  //name:        {
-  //  color: 'blue'
-  //},
-  //iconVideo:   {
-  //  width:   96,
-  //  height:  96,
-  //  padding: 24
-  //},
-  //video:       {
-  //  width: 60
-  //},
-  //title:       {
-  //  marginTop: '25px'
-  //},
-  //titleCenter: {
-  //  textAlign: 'center'
-  //},
-  //stream:      {
-  //  marginTop: '30px'
-  //},
-  //banner:      {
-  //  width: '100%'
-  //}
   root: {
     height: 'calc(100vh - 64px)',
     display: 'flex',
     width: '100%',
     flexDirection: 'column',
-    // backgroundColor: '#636A6B',
     backgroundImage:     'url(https://images.unsplash.com/10/wii.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=38ab2a46e8621c8c23f5e4f10dcc7017)',
     backgroundSize:      'cover',
     backgroundBlendMode: 'multiply',
@@ -80,14 +52,12 @@ const styles = {
     flexBasis: '75%'
   },
   chat: {
-    // display: 'flex',
     flexBasis: '25%'
   },
   streamAction: {
     display: 'flex',
     width: '80%',
     justifyContent: 'flex-start',
-    // marginTop: '1em'
   },
   name: {
     display: 'flex',
@@ -162,7 +132,7 @@ class StreamSingle extends Component {
                 <h3 style={{marginLeft: '1em'}}>{display_name}</h3>
               </div>
               <div>
-                <RaisedButton label="More Info" onTouchTap={this.handleOpen} style={{ marginRight: '5px' }} />
+                {/*<RaisedButton label="More Info" onTouchTap={this.handleOpen} style={{ marginRight: '5px' }} />*/}
                 {this.props.streamFavorites.find((info) => info._id === _id) ?
                   <RaisedButton label="UNFOLLOW"
                                 onClick={this.removeStreamFavorite.bind(this, _id)}
@@ -215,39 +185,3 @@ const mapState = (state) => ({
 const mapDispatch = (dispatch) => ({ actions: bindActionCreators(favoriteActions, dispatch) });
 
 export default connect(mapState, mapDispatch)(StreamSingle);
-
-//<div className="wrap container-fluid">
-//  <div className="row" style={styles.title}>
-//    <div className="col-md-offset-2 col-lg-offset-2 col-md-1 col-lg-1">
-//      <Avatar src={logo} size={60} />
-//    </div>
-//    <div className="col-md-6 col-lg-6">
-//      <h3 style={styles.titleCenter}>{status}</h3>
-//    </div>
-//  </div>
-//  <div className="row" style={styles.stream}>
-//    <div className="col-md-offset-2 col-md-5 col-lg-offset-2 col-lg-5">
-//      <IframeVideo name={name} />
-//      <br />
-//      {this.props.streamFavorites.find((info) => info._id === _id) ?
-//        <RaisedButton label="UNFOLLOW"
-//                      onClick={this.removeStreamFavorite.bind(this, _id)}
-//                      labelPosition="before"
-//                      backgroundColor="#69F0AE"
-//                      icon={<Favorite />}
-//                      style={{marginTop: '10px'}} /> :
-//        <RaisedButton label="FOLLOW"
-//                      onClick={this.addStreamFavorite.bind(this, stream)}
-//                      labelPosition="before"
-//                      primary={true}
-//                      icon={<FavoriteBorder />}
-//                      style={{marginTop: '10px'}} />
-//      }
-//      <br />
-//      <TwitchChat name={name} />
-//    </div>
-//    <div className="col-md-offset-2 col-md-2 col-lg-offset-2 col-lg-2">
-//      <StreamCard stream={stream} />
-//    </div>
-//  </div>
-//</div>

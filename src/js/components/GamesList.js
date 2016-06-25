@@ -67,7 +67,6 @@ class GamesList extends Component {
             const { viewers } = game;
             const { name, _id, box } = game.game;
             return (
-
               <GridTile style={styles.tile}
                         title={name}
                         ref={i}
@@ -82,7 +81,6 @@ class GamesList extends Component {
                   <img src={box.large} alt={`${name}_IMG`} style={styles.img} />
                 </Link>
               </GridTile>
-
             );
           })}
         </GridList>
