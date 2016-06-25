@@ -1,61 +1,73 @@
-import request from 'superagent';
-/*>>>>>>=============================================<<<<<<*/
-
-import * as types from '../constants/';
-/*>>>>>>=============================================<<<<<<*/
+import request from "superagent";
+import * as types from "../constants/";
 
 export const reqAllGames = (games) => {
-    const promise = new Promise((resolve, reject) => {
-        request
-            .get(`https://api.twitch.tv/kraken/games/top?limit=24&offset=0`)
-            .end((err, res) => {
-                if (err) {
-                    reject(err);
-                } else {
-                    resolve(res.body.top);
-                }
-            });
-    });
-    return {
-        type: types.RECEIVE_ALL_GAMES,
-        payload: promise
-    };
+
+  const promise = new Promise((resolve, reject) => {
+    request
+      .get(`https://api.twitch.tv/kraken/games/top?limit=24&offset=0`)
+      .end((err, res) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(res.body.top);
+        }
+      });
+  });
+
+  return {
+    type:    types.RECEIVE_ALL_GAMES,
+    payload: promise
+  };
+
 };
 
 export const addGameToFavorite = (game) => {
-    let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
-    if (gameFavorites) {
-        gameFavorites.push(game);
-    } else {
-        gameFavorites = [ game ];
-    }
-    localStorage.setItem('gameFavorites', JSON.stringify(gameFavorites));
-    return {
-        type: types.ADD_GAME_TO_FAVORITE,
-        game
-    };
+
+  let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
+
+  if (gameFavorites) {
+    gameFavorites.push(game);
+  } else {
+    gameFavorites = [ game ];
+  }
+  localStorage.setItem('gameFavorites', JSON.stringify(gameFavorites));
+
+  return {
+    type: types.ADD_GAME_TO_FAVORITE,
+          game
+  };
+
 };
 
 export const removeGameFromFavorite = (game) => {
-    let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
-    if (gameFavorites) {
-        gameFavorites = gameFavorites.filter((gameFavorites) => gameFavorites.game._id !== game.game._id);
-        localStorage.setItem('gameFavorites', JSON.stringify(gameFavorites));
-    }
-    return {
-        type: types.REMOVE_GAME_FROM_FAVORITE,
-        game
-    };
+
+  let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
+
+  if (gameFavorites) {
+    gameFavorites = gameFavorites.filter((gameFavorites) => gameFavorites.game._id !== game.game._id);
+    localStorage.setItem('gameFavorites', JSON.stringify(gameFavorites));
+  }
+
+  return {
+    type: types.REMOVE_GAME_FROM_FAVORITE,
+          game
+  };
+
 };
 
 export const removeGameFromListFavorite = (gameId) => {
-    let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
-    if (gameFavorites) {
-        gameFavorites = gameFavorites.filter((gameFavorites) => gameFavorites.game._id !== gameId);
-        localStorage.setItem('gameFavorites', JSON.stringify(gameFavorites));
-    }
-    return {
-        type: types.REMOVE_GAME_FROM_LIST_FAVORITE,
-        gameId
-    };
+
+  let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
+
+  if (gameFavorites) {
+    gameFavorites = gameFavorites.filter((gameFavorites) => gameFavorites.game._id !== gameId);
+    localStorage.setItem('gameFavorites', JSON.stringify(gameFavorites));
+  }
+
+  return {
+    type: types.REMOVE_GAME_FROM_LIST_FAVORITE,
+          gameId
+  };
+
 };

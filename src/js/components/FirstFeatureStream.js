@@ -1,9 +1,11 @@
-import React from 'react';
+import React from "react";
 
 const FirstFeatureStream = () => (
-    <div>
-        Hello
-    </div>
+
+  <div>
+    Hello
+  </div>
+
 );
 
 export default FirstFeatureStream;
