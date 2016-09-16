@@ -1,11 +1,12 @@
 import request from "superagent";
 import * as types from "../constants/";
+import API_KEY from '../../../server/config/api_key';
 
-export const reqAllGames = (games) => {
+export const reqAllGames = games => {
 
   const promise = new Promise((resolve, reject) => {
     request
-      .get(`https://api.twitch.tv/kraken/games/top?limit=24&offset=0`)
+      .get(`https://api.twitch.tv/kraken/games/top?limit=24&offset=0&client_id=${API_KEY}`)
       .end((err, res) => {
         if (err) {
           reject(err);
@@ -22,7 +23,7 @@ export const reqAllGames = (games) => {
 
 };
 
-export const addGameToFavorite = (game) => {
+export const addGameToFavorite = game => {
 
   let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
 
@@ -35,12 +36,12 @@ export const addGameToFavorite = (game) => {
 
   return {
     type: types.ADD_GAME_TO_FAVORITE,
-          game
+    game
   };
 
 };
 
-export const removeGameFromFavorite = (game) => {
+export const removeGameFromFavorite = game => {
 
   let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
 
@@ -51,12 +52,12 @@ export const removeGameFromFavorite = (game) => {
 
   return {
     type: types.REMOVE_GAME_FROM_FAVORITE,
-          game
+    game
   };
 
 };
 
-export const removeGameFromListFavorite = (gameId) => {
+export const removeGameFromListFavorite = gameId => {
 
   let gameFavorites = JSON.parse(localStorage.getItem('gameFavorites'));
 
@@ -67,7 +68,7 @@ export const removeGameFromListFavorite = (gameId) => {
 
   return {
     type: types.REMOVE_GAME_FROM_LIST_FAVORITE,
-          gameId
+    gameId
   };
 
 };
