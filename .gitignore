@@ -66,4 +66,3 @@ jspm_packages
 .idea
 config.js
 build/
-server/config
