@@ -1,12 +1,12 @@
 import request from "superagent";
 import * as types from "../constants/";
-import API_KEY from '../../../server/config/api_key';
+import config from '../../../server/config/serverConfig';
 
 export const reqStreams = (game) => {
 
   const promise = new Promise((resolve, reject) => {
     request
-      .get(`https://api.twitch.tv/kraken/search/streams?limit=100&offset=0&q=${game}&client_id=${API_KEY}`)
+      .get(`${config.ROOT_URL}/${game}&client_id=${config.API_KEY}`)
       .end((err, res) => {
         if (err) {
           reject(err);

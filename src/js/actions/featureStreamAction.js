@@ -1,12 +1,12 @@
 import request from "superagent";
 import * as types from "../constants/";
-import API_KEY from '../../../server/config/api_key';
+import config from '../../../server/config/serverConfig';
 
 export const reqFeatureStreams = featured => {
 
   const promise = new Promise((resolve, reject) => {
     request
-      .get(`https://api.twitch.tv/kraken/streams/featured?limit=48&offset=0&client_id=${API_KEY}`)
+      .get(`${config.ROOT_URL}/streams/featured?limit=48&offset=0&client_id=${config.API_KEY}`)
       .end((err, res) => {
         if (err) {
           reject(err);
